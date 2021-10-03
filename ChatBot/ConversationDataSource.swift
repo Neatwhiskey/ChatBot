@@ -2,7 +2,9 @@ import Foundation
 class ConversationDataSource {
     
     /// The number of Messages in the conversation
-    var messageCount = 0
+    var messageCount: Int{
+        return messages.count
+    }
     var messages = [openingLine]
     
     /// Add a new question to the conversation
@@ -11,7 +13,7 @@ class ConversationDataSource {
             text: question, type: .question)
         messages.append(message)
         print("Asked to add question: \(question)")
-        messageCount+=1
+        //messageCount+=1
         
 
     }
@@ -23,7 +25,7 @@ class ConversationDataSource {
         messages.append(message)
 
         print("Asked to add answer: \(answer)")
-        messageCount+=1
+        //messageCount+=1
     }
     
     /// The Message at a specific point in the conversation
